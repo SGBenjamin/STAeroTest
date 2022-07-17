@@ -8,20 +8,36 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Table(name="Flights")
 public class flightModel {
     @Id
     @NotNull
     @Column(name = "id")
     private Long id;
 
+    @NotNull
+    @Column(name="tailNumber")
     private String tailNumber;
+
+    @NotNull
+    @Column(name="flightID")
     private String flightID;
+
+    @NotNull
+    @Column(name="takeoff")
     private String takeoff;
+
+    @NotNull
+    @Column(name="landing")
     private String landing;
+
+    @NotNull
+    @Column(name="duration")
     private String duration;
 
     public Long getId() {

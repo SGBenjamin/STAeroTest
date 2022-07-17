@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @NoArgsConstructor
 @Data
+@Table(name="Users")
 public class userModel {
 
     @Id
@@ -18,8 +20,16 @@ public class userModel {
     @Column(name = "id")
     private Integer id;
 
+    @NotNull
+    @Column(name="username")
     private String username;
+
+    @NotNull
+    @Column(name="password")
     private String password;
+
+    @NotNull
+    @Column(name="accessToken")
     private String accessToken;
 
     public Integer getId() {
