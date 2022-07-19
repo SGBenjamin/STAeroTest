@@ -3,10 +3,15 @@ package com.staeroexample.test.repo;
 import com.staeroexample.test.model.userModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
-public interface userRepo extends JpaRepository<userModel, Integer> {
+import java.util.ArrayList;
+import java.util.List;
 
-    @Query("SELECT id FROM userModel")
-    userModel findAllUserID();
+public interface userRepo extends CrudRepository<userModel, Integer> {
+
+    @Query("Select username, accessToken from userModel")
+    List<userModel> findallExcPW();
+
 
 }

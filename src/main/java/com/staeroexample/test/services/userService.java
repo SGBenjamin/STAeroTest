@@ -3,18 +3,15 @@ package com.staeroexample.test.services;
 import com.staeroexample.test.model.userModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface userService {
-    ArrayList<userModel> findAllUsers();
+    userModel saveUser(userModel user);
 
-    userModel findUser (int id);
+    List<userModel> fetchUserList();
 
-    userModel createUser(userModel user);
+    userModel updateUser(userModel user, int id);
 
-    void deleteUser(userModel user);
-
-    userModel editUser(userModel user);
-
-
+    void deleteUserByID(int id);
 
 }

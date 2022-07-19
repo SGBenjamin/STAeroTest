@@ -1,19 +1,19 @@
 package com.staeroexample.test.services;
 
 import com.staeroexample.test.model.flightModel;
+import com.staeroexample.test.model.userModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface flightService {
+    flightModel saveFlight(flightModel flight);
 
-    ArrayList<flightModel> findAllFlights();
+    List<flightModel> fetchFlightList();
 
-    flightModel findFlight(int id);
+    flightModel updateFlight(flightModel flight, int id);
 
-    flightModel createFlight(flightModel flight);
+    void deleteFlightByID(int id);
 
-    flightModel editFlight(flightModel flight);
-
-    void deleteFlight(flightModel flight);
 
 }

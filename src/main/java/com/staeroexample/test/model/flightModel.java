@@ -5,20 +5,16 @@ import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@NoArgsConstructor
 @Entity
 @Data
-@NoArgsConstructor
-@Table(name="Flights")
+@Table(name = "Flights")
 public class flightModel {
     @Id
-    @NotNull
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @NotNull
     @Column(name="tailNumber")
@@ -40,11 +36,11 @@ public class flightModel {
     @Column(name="duration")
     private String duration;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

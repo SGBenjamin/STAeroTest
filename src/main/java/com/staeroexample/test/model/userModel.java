@@ -1,23 +1,22 @@
 package com.staeroexample.test.model;
 
 import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import net.minidev.json.annotate.JsonIgnore;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
 @NoArgsConstructor
+@Entity
 @Data
-@Table(name="Users")
+@Table(name = "Users")
 public class userModel {
 
     @Id
-    @NotNull
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
@@ -25,10 +24,11 @@ public class userModel {
     private String username;
 
     @NotNull
+    @JsonIgnore
     @Column(name="password")
     private String password;
 
-    @NotNull
+    @Nullable
     @Column(name="accessToken")
     private String accessToken;
 
@@ -63,4 +63,5 @@ public class userModel {
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
+
 }

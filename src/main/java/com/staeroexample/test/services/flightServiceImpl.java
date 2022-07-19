@@ -6,41 +6,31 @@ import com.staeroexample.test.repo.flightRepo;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 public class flightServiceImpl implements flightService{
 
     @Resource
     private flightRepo fRepo;
 
-
     @Override
-    @Transactional
-    public ArrayList<flightModel> findAllFlights() {
-        ArrayList<flightModel> result = (ArrayList<flightModel>) fRepo.findAll();
-        return result;
+    public flightModel saveFlight(flightModel flight){
+        return fRepo.save(flight);
     }
 
     @Override
-    @Transactional
-    public flightModel findFlight(int id) {
-        return fRepo.findById(id).orElse(null);
+    public List<flightModel> fetchFlightList(){
+        return(List<flightModel>) fRepo.findAll();
     }
 
     @Override
-    @Transactional
-    public flightModel createFlight(flightModel flight) {
-        return fRepo.saveAndFlush(flight);
+    public flightModel updateFlight(flightModel flight, int id){
+        return null;
     }
 
     @Override
-    @Transactional
-    public flightModel editFlight(flightModel flight) {
-        return fRepo.saveAndFlush(flight);
+    public void deleteFlightByID(int id){
+        fRepo.deleteById(id);
     }
 
-    @Override
-    @Transactional
-    public void deleteFlight(flightModel flight) {
-        fRepo.delete(flight);
-    }
 }
