@@ -11,4 +11,7 @@ import java.util.List;
 
 public interface flightRepo extends CrudRepository<flightModel, Integer> {
 
+    @Query(value = "SELECT a FROM flightModel a where flightID = ?1")
+    List<flightModel> findFlightsbyFlightID(String flightID);
+
 }

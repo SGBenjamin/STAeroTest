@@ -44,4 +44,9 @@ public class flightServiceImpl implements flightService{
         fRepo.deleteById(id);
     }
 
+    @Override
+    public List<flightModel> findFlightsbyFlightID(String flightID) {
+        return fRepo.findFlightsbyFlightID(flightID);
+    }
+
 }

@@ -15,5 +15,7 @@ public interface flightService {
 
     void deleteFlightByID(int id);
 
+    List<flightModel> findFlightsbyFlightID(String flightID);
+
 
 }

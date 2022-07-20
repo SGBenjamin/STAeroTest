@@ -32,4 +32,8 @@ public class flightController {
         return "Update Successful";
     }
 
+    @GetMapping("/flightLog/{flightID}")
+    public List<flightModel> fetchFlightsByID(@PathVariable("flightID") String flightID){
+        return flightService.findFlightsbyFlightID(flightID);
+    }
 }
