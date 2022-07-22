@@ -7,11 +7,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public interface userRepo extends CrudRepository<userModel, Integer> {
 
     @Query("Select username, accessToken from userModel")
     List<userModel> findallExcPW();
 
-
+    public Optional<userModel> findByUsername(String username);
 }

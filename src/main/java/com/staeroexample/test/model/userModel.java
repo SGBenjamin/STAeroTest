@@ -1,5 +1,6 @@
 package com.staeroexample.test.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 import lombok.Data;
@@ -24,7 +25,7 @@ public class userModel {
     private String username;
 
     @NotNull
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name="password")
     private String password;
 
