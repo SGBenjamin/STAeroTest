@@ -18,14 +18,14 @@ public class userServiceImpl implements userService{
         return uRepo.save(user);
     }
 
-    @Override
-    public List<userModel> fetchUserList(){
-        return (List<userModel>) uRepo.findAll();
-    }
 //    @Override
 //    public List<userModel> fetchUserList(){
-//        return (List<userModel>) uRepo.findallExcPW();
+//        return uRepo.findAll();
 //    }
+    @Override
+    public List<userRepo.userProjection> fetchUserList(){
+        return uRepo.findUsername();
+    }
 
     @Override
     public userModel updateUser(userModel user, int id) {

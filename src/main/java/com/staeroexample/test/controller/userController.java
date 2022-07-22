@@ -1,6 +1,7 @@
 package com.staeroexample.test.controller;
 
 import com.staeroexample.test.model.userModel;
+import com.staeroexample.test.repo.userRepo;
 import com.staeroexample.test.services.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class userController {
     private userService userService;
 
     @GetMapping("/user")
-    public List<userModel> fetchUserList() {
+    public List<userRepo.userProjection> fetchUserList() {
         return userService.fetchUserList();
     }
 

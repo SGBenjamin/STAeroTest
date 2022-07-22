@@ -20,16 +20,13 @@ public class userModel {
     private Integer id;
 
     @NotNull
-    @Column(name="username")
     private String username;
 
     @NotNull
     @JsonIgnore
-    @Column(name="password")
     private String password;
 
     @Nullable
-    @Column(name="accessToken")
     private String accessToken;
 
     public Integer getId() {

@@ -17,23 +17,18 @@ public class flightModel {
     private Integer id;
 
     @NotNull
-    @Column(name="tailNumber")
     private String tailNumber;
 
     @NotNull
-    @Column(name="flightID")
     private String flightID;
 
     @NotNull
-    @Column(name="takeoff")
     private String takeoff;
 
     @NotNull
-    @Column(name="landing")
     private String landing;
 
     @NotNull
-    @Column(name="duration")
     private String duration;
 
     public Integer getId() {
